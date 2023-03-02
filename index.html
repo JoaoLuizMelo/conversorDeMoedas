@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Conversor-de-moedas</title>
 </head>
-<header>
-    <h1>DevClub Convert Money</h1>
-</header>
-<select name="selectOne" class ="firstSelect">
-    <option value="realBrasileiro">R$ Real Brasileiro</option>
-    <option value="dolarAmericano">US$ Dolar Americano</option>
-    <option value="euro">€ Euro</option>
-    <option value="bitcoin">Bitcoin</option>
-</select>
-<select name="selectTwo" class="secondSelect">
-    <option value="realBrasileiro">R$ Real Brasileiro</option>
-    <option value="dolarAmericano">US$ Dolar Americano</option>
-    <option value="euro">€ Euro</option>
-    <option value="bitcoin">Bitcoin</option>
-</select>
-<input type="number" name="valorEntrada">
-<section>
-    <img src="/assets/brasil 2.png" alt="img-moeda01">
-    <img src="/assets/Vector.png" alt="seta apontando">
-    <img src="/assets/estados-unidos (1) 1.png" alt="img-moeda02">
-</section>
 
 <body>
-    
+    <div class="countainer">
+        <header>
+            <h1>DevClub Convert Money</h1>
+        </header>
+        <main>
+            <label class="de">Converter <span>de</span>
+                <select class="firstSelect">
+                    <option value="realBrasileiro" selected>R$ Real Brasileiro</option>
+                    <option value="dolarAmericano">US$ Dolar Americano</option>
+                    <option value="euro">€ Euro</option>
+                    <option value="bitcoin">Bitcoin</option>
+                </select>
+            </label>
+            <label class="para">Converter <span>para</span>
+                <select class="secondSelect">
+                    <option value="realBrasileiro">R$ Real Brasileiro</option>
+                    <option value="dolarAmericano" selected>US$ Dolar Americano</option>
+                    <option value="euro">€ Euro</option>
+                    <option value="bitcoin">Bitcoin</option>
+                </select>
+            </label>
+            <label class="value"><span>Valor</span>
+                <input type="number" placeholder="R$10.000,00">
+            </label>
+            <button id="convertButton">Convert</button>
+            <section>
+                <div>
+                    <img src="/assets/brasil 2.png" alt="img-moeda01">
+                    <p class="firstCoin">Real</p>
+                    <p class="valueImgOne" id="value1">R$ 10.000,00</p>
+                </div>
+                <img src="/assets/Vector.png" alt="seta apontando">
+                <div>
+                    <img src="/assets/estados-unidos (1) 1.png" alt="img-moeda02">
+                    <p class="secondCoin">Dólar Americano</p>
+                    <p class="valueImgTwo" id="value2">R$ 2.000,00</p>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
+<script src="/scripts.js"></script>
 </html>
