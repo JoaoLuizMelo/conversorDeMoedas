@@ -5,6 +5,7 @@ const baseSelect = document.getElementById("baseSelect")
 const dollarValue = 5.2
 const euroValue = 5.9
 const realBrasileiro = 1
+const bitcon =116625.61 
 
 const convertValue = () => {
     const input = document.getElementsByTagName("input")[0].value
@@ -12,6 +13,7 @@ const convertValue = () => {
     const numberTwo = document.getElementById("value2")
 
     numberOne.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(input)
+   
     if (select.value === "US$ Dolar Americano") {
         const convert = (input / dollarValue)
         numberTwo.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(convert)
@@ -19,9 +21,13 @@ const convertValue = () => {
     if (select.value === "€ Euro") {
         const convert = (input / euroValue)
         numberTwo.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(convert)
-    } if (select.value === "R$ Real Brasileiro") {
+    } 
+    if (select.value === "R$ Real Brasileiro") {
         const convert = (input / realBrasileiro)
         numberTwo.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(convert)
+    }
+    else { const convert = input/bitcon
+    numberTwo.innerHTML = new Intl.NumberFormat( { style: 'decimal'}).format(convert)
     }
 }
 const curencyChange = () => {
@@ -43,6 +49,10 @@ const curencyChange = () => {
         currencyCoin.innerHTML = "Real"
         currencyImg.src = "/assets/brasil 2.png"
     }
+    if (select.value === "Bitcoin") {
+        currencyCoin.innerHTML= "Bitcoin"
+        currencyImg.src = "/assets/bitcoin.png"
+    }
 
     convertValue()
 }
@@ -51,4 +61,4 @@ const curencyChange = () => {
 
 button.addEventListener('click', convertValue)
 select.addEventListener('change', curencyChange)
-baseSelect.addEventListener('change', curencyChange)
+//baseSelect.addEventListener('change', curencyChange)
