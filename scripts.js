@@ -26,7 +26,7 @@ const convertValue = () => {
         const convert = (input / realBrasileiro)
         numberTwo.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(convert)
     }
-    else { const convert = input/bitcon
+    if (select.value === "Bitcoin"){ const convert = input/bitcon
     numberTwo.innerHTML = new Intl.NumberFormat( { style: 'decimal'}).format(convert)
     }
 }
